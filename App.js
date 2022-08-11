@@ -22,7 +22,7 @@ mongoose.connection.once("open", () => {
 //
 app.set("trust proxy", 1);
 app.use(cors());
-app.use(cookieParser());
+app.use(cookieParser({ Credential: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

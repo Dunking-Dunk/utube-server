@@ -24,7 +24,7 @@ router.delete("/:id", VerifyUserToken, deleteVideo);
 
 router.put("/:id", VerifyUserToken, updateVideo);
 
-router.get("/find/:id", VerifyUserToken, getVideo);
+router.get("/find/:id", getVideo);
 
 router.put("/view/:id", viewVideo);
 
@@ -36,7 +36,7 @@ router.get("/sub", VerifyUserToken, getSubVideo);
 
 router.get("/tags", getByTags);
 
-router.get("/search", VerifyUserToken, getSearchedVideo);
+router.get("/search", getSearchedVideo);
 
 router.get("/user", VerifyUserToken, getUsersVideo);
 

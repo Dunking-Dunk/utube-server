@@ -19,7 +19,10 @@ export const SignUp = async (req, res, next) => {
       process.env.TOKEN__KEY
     );
 
-    res.cookie("access_token", token).status(200).json({ success: true, user });
+    res
+      .cookie("access_token", token, { httpOnly: true })
+      .status(200)
+      .json({ success: true, user });
   } catch (err) {
     next(err);
   }
@@ -47,7 +50,9 @@ export const SignIn = async (req, res, next) => {
 
         const { password, ...others } = user._doc;
 
-        res.cookie("access_token", token).json({ success: true, user: others });
+        res
+          .cookie("access_token", token, { httpOnly: true })
+          .json({ success: true, user: others });
       }
     }
   } catch (err) {

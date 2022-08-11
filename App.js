@@ -20,6 +20,7 @@ mongoose.connection.once("open", () => {
   console.log("server connected");
 });
 //
+app.set("trust proxy", 1);
 app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json());
